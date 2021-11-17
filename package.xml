@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package>
+  <name>openvino</name>
+  <version>0.0.1</version>
+  <description>The dumpbot_serial_func package for getting data of dumpbot from MCU</description>
+
+  <maintainer email="teiboku@outlook.com">CongGuan</maintainer>
+
+  <license>BSD</license>
+
+  <author email="teiboku@outlook.com">CongGuan</author>
+
+  <url type="website">http://ros.org/wiki/cht10_node</url>
+  <url type="repository">https://github.com/Playfish/cht10_node</url>
+  <url type="bugtracker">https://github.com/Playfish/cht10_node/issues</url>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>ecl_threads</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <run_depend>nodelet</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>ecl_threads</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+
+
+  <export> 
+    <nodelet plugin="${prefix}/plugins/nodelets.xml" />
+  </export>
+</package>

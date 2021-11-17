@@ -1,0 +1,34 @@
+# Copyright (c) 2021 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  "mobilenet-v3-small-1.0-224-tf" is one of MobileNets V3 - next generation of MobileNets,
+  based on a combination of complementary search techniques as well as a novel architecture
+  design. "mobilenet-v3-small-1.0-224-tf" is targeted for low resource use cases.
+  For details see paper <https://arxiv.org/abs/1905.02244>.
+task_type: classification
+files:
+  - name: weights_mobilenet_v3_small_224_1.0_float.h5
+    size: 10734624
+    sha256: bb828f93ae32afb89c2df190a39c06deaa63ea1d95fec93bceb52264f5bf61e8
+    source: https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v3/weights_mobilenet_v3_small_224_1.0_float.h5
+model_optimizer_args:
+  - --reverse_input_channels
+  - --input_shape=[1,224,224,3]
+  - --input=input_1
+  - --output=StatefulPartitionedCall/MobilenetV3small/Predictions/Softmax
+  - --saved_model_dir=$dl_dir/mobilenet_v3_small_224_1.0_float.savedmodel
+framework: tf
+quantizable: yes
+license: https://raw.githubusercontent.com/tensorflow/models/master/LICENSE
